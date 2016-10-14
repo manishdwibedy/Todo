@@ -16,6 +16,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     @IBOutlet weak var addUpdateButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     var mode = "Add"
     var selected_todo: String = ""
     
@@ -29,6 +30,7 @@ class AddViewController: UIViewController {
         if mode == "Update"{
             todoText.text = selected_todo
             addUpdateButton.setTitle("Update", forState: UIControlState.Normal)
+            deleteButton.alpha = 1.0
         }
         // Do any additional setup after loading the view.
     }
