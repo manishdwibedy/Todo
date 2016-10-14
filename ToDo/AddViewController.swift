@@ -12,6 +12,7 @@ import RealmSwift
 class AddViewController: UIViewController {
 
     @IBOutlet weak var todoText: UITextField!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     var mode = "Add"
     var selected_todo: String = ""
@@ -21,8 +22,11 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(mode)
-        print(selected_todo)
+        self.navigationBar.topItem?.title = mode
+        
+        if mode == "Update"{
+            todoText.text = selected_todo
+        }
         // Do any additional setup after loading the view.
     }
 

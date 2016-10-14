@@ -65,7 +65,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "add_update_todo" {
             if let destination = segue.destinationViewController as? AddViewController {
-                destination.mode = "Update"
+                if selected_todo.characters.count > 0{
+                    destination.mode = "Update"
+                }
                 destination.selected_todo = selected_todo
             }
         }
