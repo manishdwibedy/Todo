@@ -18,6 +18,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var todoCount = 0
     var todo_text_list = [String]()
     
+    var selected_todo:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         todoList.tableFooterView = UIView()
@@ -55,8 +57,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        selected_todo = self.todo_text_list[indexPath.row]
+        performSegueWithIdentifier("add_update_todo", sender: nil)
     }
-
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "add_update_todo" {
+            if let destination = segue.destinationViewController as? AddViewController {
+                destination.mode = "Update"
+                destination.selected_todo = selected_todo
+            }
+        }
+    }
 }
 

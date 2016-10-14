@@ -13,11 +13,16 @@ class AddViewController: UIViewController {
 
     @IBOutlet weak var todoText: UITextField!
     
+    var mode = "Add"
+    var selected_todo: String = ""
+    
     // Get the default Realm
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(mode)
+        print(selected_todo)
         // Do any additional setup after loading the view.
     }
 
@@ -50,5 +55,6 @@ class AddViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
