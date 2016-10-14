@@ -123,6 +123,9 @@
                                     <constraint firstAttribute="height" constant="30" id="fhR-Uq-0zd"/>
                                 </constraints>
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteTodo:" destination="m2b-8t-rHN" eventType="touchUpInside" id="tEa-YS-Fli"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -66,6 +66,14 @@ class AddViewController: UIViewController {
         
     }
 
+    @IBAction func deleteTodo(sender: UIButton) {
+        let todo = realm.objects(Todo.self).filter("text == '" + selected_todo + "'").first
+        try! realm.write {
+            realm.delete(todo!)
+        }
+        
+        performSegueWithIdentifier("save_todo", sender: nil)
+    }
     /*
     // MARK: - Navigation
 
