@@ -29,7 +29,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         todoCount = todos.count
         
         for todo in todos{
-            print(todo.text)
             todo_text_list.append(todo.text)
         }
         // Do any additional setup after loading the view, typically from a nib.
