@@ -24,9 +24,13 @@ class ViewController: UIViewController {
         
         // Add to the Realm inside a transaction
         try! realm.write {
-            realm.add(todo)
+            //realm.add(todo)
         }
 
+        let todos = realm.objects(Todo.self)
+        print(todos.count)
+        todo = todos[0]
+        print(todo.text)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
