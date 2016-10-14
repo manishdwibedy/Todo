@@ -32,7 +32,6 @@ class AddViewController: UIViewController {
             addUpdateButton.setTitle("Update", forState: UIControlState.Normal)
             deleteButton.alpha = 1.0
         }
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,15 +73,4 @@ class AddViewController: UIViewController {
         
         performSegueWithIdentifier("save_todo", sender: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-
 }
