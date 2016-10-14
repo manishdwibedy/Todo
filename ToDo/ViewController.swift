@@ -10,8 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var todoList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        todoList.tableFooterView = UIView()
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
