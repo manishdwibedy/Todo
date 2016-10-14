@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Realm
 
 class AddViewController: UIViewController {
 
@@ -39,14 +40,25 @@ class AddViewController: UIViewController {
     
     @IBAction func saveTodo(sender: UIButton) {
         let todo = Todo()
-        todo.text = todoText.text!
         
-        // Add to the Realm inside a transaction
-        try! realm.write {
-            realm.add(todo)
-            print("saving to DB")
-        }
+        
+        if mode != "Update"{
+            // Add to the Realm inside a transaction
+            try! realm.write {
+                todo.text = todoText.text!
+                realm.add(todo)
+                print("saving to DB")
+            }
 
+        }
+        else{
+            
+            let todo = realm.objects(Todo.self).filter("text == '" + selected_todo + "'").first
+            try! realm.write {
+                todo!.text = todoText.text!
+            }
+        }
+    
         performSegueWithIdentifier("save_todo", sender: nil)
 
         
