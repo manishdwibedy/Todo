@@ -13,21 +13,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var todoList: UITableView!
     
+    // The default realm object
     let realm = try! Realm()
     
-    var todoCount = 0
+    // List of todo
     var todo_text_list = [String]()
     
+    // The selected todo, if any
     var selected_todo:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Removing any seperators, where it's not needed
         todoList.tableFooterView = UIView()
         
+        // Fetching the todo's from the local DB
         let todos = realm.objects(Todo.self)
         
-        todoCount = todos.count
-        
+        // Storing the todo's in a list
         for todo in todos{
             todo_text_list.append(todo.text)
         }
@@ -42,7 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoCount
+        return todo_text_list.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -54,7 +58,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Setting the selected todo
         selected_todo = self.todo_text_list[indexPath.row]
+        
+        // Moving to the other screen to update or delete the todo
         performSegueWithIdentifier("add_update_todo", sender: nil)
     }
     
@@ -62,9 +69,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "add_update_todo" {
             if let destination = segue.destinationViewController as? AddViewController {
+                // If a todo was selected, then changing the mode of operation to update
                 if selected_todo.characters.count > 0{
                     destination.mode = "Update"
                 }
+                // Setting the selected todo
                 destination.selected_todo = selected_todo
             }
         }
