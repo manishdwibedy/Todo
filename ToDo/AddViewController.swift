@@ -17,19 +17,29 @@ class AddViewController: UIViewController {
     
     @IBOutlet weak var addUpdateButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    
+    // The mode of operation - either add or update
     var mode = "Add"
+    
+    // The selected todo, if any
     var selected_todo: String = ""
     
-    // Get the default Realm
+    // Getting the default Realm
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.topItem?.title = mode
         
+        // If a todo has been selected
         if mode == "Update"{
+            // Setting the text of the todo
             todoText.text = selected_todo
+            
+            // Change the text of the button
             addUpdateButton.setTitle("Update", forState: UIControlState.Normal)
+            
+            // Showing the delete button
             deleteButton.alpha = 1.0
         }
     }
@@ -40,37 +50,41 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func saveTodo(sender: UIButton) {
-        let todo = Todo()
-        
-        
+        // If a new todo is being created
         if mode != "Update"{
             // Add to the Realm inside a transaction
             try! realm.write {
+                let todo = Todo()
                 todo.text = todoText.text!
                 realm.add(todo)
-                print("saving to DB")
             }
 
         }
+        // If an existing todo is being updated
         else{
-            
+            // getting the selectedtodo object from the DB
             let todo = realm.objects(Todo.self).filter("text == '" + selected_todo + "'").first
+            
+            // Updating the text of the DB
             try! realm.write {
                 todo!.text = todoText.text!
             }
         }
-    
-        performSegueWithIdentifier("save_todo", sender: nil)
-
         
+        // Moving back to the home page
+        performSegueWithIdentifier("save_todo", sender: nil)
     }
 
     @IBAction func deleteTodo(sender: UIButton) {
+        // getting the selectedtodo object from the DB
         let todo = realm.objects(Todo.self).filter("text == '" + selected_todo + "'").first
+        
+        // Deleting the todo from the DB
         try! realm.write {
             realm.delete(todo!)
         }
         
+        // Moving back to the home page
         performSegueWithIdentifier("save_todo", sender: nil)
     }
 }
