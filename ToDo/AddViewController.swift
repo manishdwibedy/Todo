@@ -62,7 +62,7 @@ class AddViewController: UIViewController {
         }
         // If an existing todo is being updated
         else{
-            // getting the selectedtodo object from the DB
+            // getting the selected todo object from the DB
             let todo = realm.objects(Todo.self).filter("text == '" + selected_todo + "'").first
             
             // Updating the text of the DB
@@ -76,7 +76,7 @@ class AddViewController: UIViewController {
     }
 
     @IBAction func deleteTodo(sender: UIButton) {
-        // getting the selectedtodo object from the DB
+        // getting the selected todo object from the DB
         let todo = realm.objects(Todo.self).filter("text == '" + selected_todo + "'").first
         
         // Deleting the todo from the DB
