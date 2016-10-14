@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddViewController: UIViewController {
 
     @IBOutlet weak var todoText: UITextField!
     
+    // Get the default Realm
+    let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -24,8 +27,15 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func saveTodo(sender: UIButton) {
-        let todo = todoText.text
-        print(todo)
+        let todo = Todo()
+        todo.text = todoText.text!
+        
+        // Add to the Realm inside a transaction
+        try! realm.write {
+            realm.add(todo)
+            print("saving to DB")
+        }
+
         performSegueWithIdentifier("save_todo", sender: nil)
 
         
