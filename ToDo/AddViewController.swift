@@ -72,7 +72,7 @@ class AddViewController: UIViewController {
         }
         
         // Moving back to the home page
-        performSegueWithIdentifier("save_todo", sender: nil)
+        performSegueWithIdentifier("homepage", sender: nil)
     }
 
     @IBAction func deleteTodo(sender: UIButton) {
@@ -85,6 +85,6 @@ class AddViewController: UIViewController {
         }
         
         // Moving back to the home page
-        performSegueWithIdentifier("save_todo", sender: nil)
+        performSegueWithIdentifier("homepage", sender: nil)
     }
 }
