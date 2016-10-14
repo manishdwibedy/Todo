@@ -133,6 +133,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addUpdateButton" destination="Dsm-pZ-6Hd" id="To0-iQ-II4"/>
                         <outlet property="navigationBar" destination="5oi-LP-VtA" id="NIh-lX-9JD"/>
                         <outlet property="todoText" destination="7z5-PG-4aW" id="xvJ-tV-cbg"/>
                     </connections>
