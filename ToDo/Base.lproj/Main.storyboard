@@ -110,24 +110,37 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsm-pZ-6Hd">
-                                <rect key="frame" x="20" y="181" width="335" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsm-pZ-6Hd">
+                                <rect key="frame" x="16" y="175" width="343" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="saveTodo:" destination="m2b-8t-rHN" eventType="touchUpInside" id="RQA-av-bFD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcT-ve-z8e">
+                                <rect key="frame" x="16" y="225" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fhR-Uq-0zd"/>
+                                </constraints>
+                                <state key="normal" title="Delete"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Dsm-pZ-6Hd" firstAttribute="trailing" secondItem="6k2-DJ-Ili" secondAttribute="trailingMargin" id="4aO-Tr-bkh"/>
                             <constraint firstItem="2ng-ik-LWs" firstAttribute="leading" secondItem="6k2-DJ-Ili" secondAttribute="leadingMargin" id="8t0-9s-E6k"/>
                             <constraint firstItem="5oi-LP-VtA" firstAttribute="leading" secondItem="6k2-DJ-Ili" secondAttribute="leadingMargin" constant="-20" id="Cog-iY-5uW"/>
                             <constraint firstItem="2ng-ik-LWs" firstAttribute="top" secondItem="5oi-LP-VtA" secondAttribute="bottom" constant="20" id="Gpf-6D-Qbx"/>
                             <constraint firstItem="5oi-LP-VtA" firstAttribute="top" secondItem="gO3-Hh-XxD" secondAttribute="bottom" id="Sf0-Qx-aEB"/>
+                            <constraint firstItem="Dsm-pZ-6Hd" firstAttribute="leading" secondItem="6k2-DJ-Ili" secondAttribute="leadingMargin" id="abK-Wz-ccU"/>
+                            <constraint firstItem="NcT-ve-z8e" firstAttribute="leading" secondItem="6k2-DJ-Ili" secondAttribute="leadingMargin" id="eoP-kx-re6"/>
                             <constraint firstItem="7z5-PG-4aW" firstAttribute="trailing" secondItem="6k2-DJ-Ili" secondAttribute="trailingMargin" id="fUp-ve-28r"/>
+                            <constraint firstItem="NcT-ve-z8e" firstAttribute="trailing" secondItem="6k2-DJ-Ili" secondAttribute="trailingMargin" id="fkM-zr-NxE"/>
+                            <constraint firstItem="Dsm-pZ-6Hd" firstAttribute="top" secondItem="7z5-PG-4aW" secondAttribute="bottom" constant="20" id="gsH-Ub-SIY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5oi-LP-VtA" secondAttribute="trailing" constant="-20" id="kmf-k1-XBj"/>
                             <constraint firstItem="7z5-PG-4aW" firstAttribute="top" secondItem="2ng-ik-LWs" secondAttribute="bottom" constant="20" id="mH5-27-hcu"/>
                             <constraint firstItem="2ng-ik-LWs" firstAttribute="trailing" secondItem="6k2-DJ-Ili" secondAttribute="trailingMargin" id="qpE-oQ-YTV"/>
+                            <constraint firstItem="NcT-ve-z8e" firstAttribute="top" secondItem="Dsm-pZ-6Hd" secondAttribute="bottom" constant="20" id="w8Y-9j-F6C"/>
                             <constraint firstItem="7z5-PG-4aW" firstAttribute="leading" secondItem="6k2-DJ-Ili" secondAttribute="leadingMargin" id="yZk-Yr-viy"/>
                         </constraints>
                     </view>
