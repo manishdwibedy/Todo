@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="44" id="JIL-r2-Qg5"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="4tD-GC-Xlb">
+                                    <navigationItem title="TODO" id="4tD-GC-Xlb">
                                         <barButtonItem key="rightBarButtonItem" title="Add" id="t56-kU-Xxa"/>
                                     </navigationItem>
                                 </items>
