@@ -12,25 +12,19 @@ import RealmSwift
 class ViewController: UIViewController {
 
     @IBOutlet weak var todoList: UITableView!
+    
+    let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         todoList.tableFooterView = UIView()
-        var todo = Todo()
-        todo.text = "hello"
         
-        // Get the default Realm
-        let realm = try! Realm()
-        // You only need to do this once (per thread)
-        
-        // Add to the Realm inside a transaction
-        try! realm.write {
-            //realm.add(todo)
-        }
-
         let todos = realm.objects(Todo.self)
         print(todos.count)
-        todo = todos[0]
-        print(todo.text)
+        
+        for todo in todos{
+            print(todo.text)
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
