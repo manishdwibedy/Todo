@@ -10,6 +10,8 @@ import UIKit
 
 class AddViewController: UIViewController {
 
+    @IBOutlet weak var todoText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,13 @@ class AddViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func saveTodo(sender: UIButton) {
+        let todo = todoText.text
+        print(todo)
+        performSegueWithIdentifier("save_todo", sender: nil)
+
+        
+    }
 
     /*
     // MARK: - Navigation

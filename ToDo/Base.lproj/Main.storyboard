@@ -96,6 +96,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsm-pZ-6Hd">
                                 <rect key="frame" x="20" y="181" width="335" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="saveTodo:" destination="m2b-8t-rHN" eventType="touchUpInside" id="RQA-av-bFD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,6 +115,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="todoText" destination="7z5-PG-4aW" id="xvJ-tV-cbg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fS7-Mz-G69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
