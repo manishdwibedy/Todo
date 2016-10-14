@@ -27,7 +27,7 @@
                                     <navigationItem title="TODO" id="4tD-GC-Xlb">
                                         <barButtonItem key="rightBarButtonItem" title="Add" id="t56-kU-Xxa">
                                             <connections>
-                                                <segue destination="m2b-8t-rHN" kind="showDetail" id="9gP-4h-S1d"/>
+                                                <segue destination="m2b-8t-rHN" kind="showDetail" identifier="add_update_todo" id="9gP-4h-S1d"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="-499.5" y="137.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Add View Controller-->
         <scene sceneID="lNi-df-oLq">
             <objects>
-                <viewController id="m2b-8t-rHN" sceneMemberID="viewController">
+                <viewController id="m2b-8t-rHN" customClass="AddViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gO3-Hh-XxD"/>
                         <viewControllerLayoutGuide type="bottom" id="9EP-tX-kgm"/>
@@ -76,18 +76,39 @@
                                     <navigationItem title="Add a new TODO" id="Gpx-cp-k0d">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="eKE-ME-t3V">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="showDetail" id="edt-DH-cIP"/>
+                                                <segue destination="BYZ-38-t0r" kind="showDetail" identifier="save_todo" id="edt-DH-cIP"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7z5-PG-4aW">
+                                <rect key="frame" x="20" y="125" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What do you want to do..?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ng-ik-LWs">
+                                <rect key="frame" x="20" y="84" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsm-pZ-6Hd">
+                                <rect key="frame" x="20" y="181" width="335" height="30"/>
+                                <state key="normal" title="Add"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2ng-ik-LWs" firstAttribute="leading" secondItem="6k2-DJ-Ili" secondAttribute="leadingMargin" id="8t0-9s-E6k"/>
                             <constraint firstItem="5oi-LP-VtA" firstAttribute="leading" secondItem="6k2-DJ-Ili" secondAttribute="leadingMargin" constant="-20" id="Cog-iY-5uW"/>
+                            <constraint firstItem="2ng-ik-LWs" firstAttribute="top" secondItem="5oi-LP-VtA" secondAttribute="bottom" constant="20" id="Gpf-6D-Qbx"/>
                             <constraint firstItem="5oi-LP-VtA" firstAttribute="top" secondItem="gO3-Hh-XxD" secondAttribute="bottom" id="Sf0-Qx-aEB"/>
+                            <constraint firstItem="7z5-PG-4aW" firstAttribute="trailing" secondItem="6k2-DJ-Ili" secondAttribute="trailingMargin" id="fUp-ve-28r"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5oi-LP-VtA" secondAttribute="trailing" constant="-20" id="kmf-k1-XBj"/>
+                            <constraint firstItem="7z5-PG-4aW" firstAttribute="top" secondItem="2ng-ik-LWs" secondAttribute="bottom" constant="20" id="mH5-27-hcu"/>
+                            <constraint firstItem="2ng-ik-LWs" firstAttribute="trailing" secondItem="6k2-DJ-Ili" secondAttribute="trailingMargin" id="qpE-oQ-YTV"/>
+                            <constraint firstItem="7z5-PG-4aW" firstAttribute="leading" secondItem="6k2-DJ-Ili" secondAttribute="leadingMargin" id="yZk-Yr-viy"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
