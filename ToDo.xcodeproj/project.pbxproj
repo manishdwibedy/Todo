@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		40E43398C1F3CC09A32AE2CB /* Pods_ToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5816A3C61C89B0D1727A3C3 /* Pods_ToDo.framework */; };
+		5B5312BB1DB14C49002130B3 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5312BA1DB14C49002130B3 /* Todo.swift */; };
 		5B893F811DB143E10097E327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B893F801DB143E10097E327 /* AppDelegate.swift */; };
 		5B893F831DB143E10097E327 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B893F821DB143E10097E327 /* ViewController.swift */; };
 		5B893F861DB143E10097E327 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B893F841DB143E10097E327 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B5312BA1DB14C49002130B3 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		5B893F7D1DB143E10097E327 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B893F801DB143E10097E327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B893F821DB143E10097E327 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				5B893F871DB143E10097E327 /* Assets.xcassets */,
 				5B893F891DB143E10097E327 /* LaunchScreen.storyboard */,
 				5B893F8C1DB143E10097E327 /* Info.plist */,
+				5B5312BA1DB14C49002130B3 /* Todo.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				5B893F831DB143E10097E327 /* ViewController.swift in Sources */,
 				5B893F811DB143E10097E327 /* AppDelegate.swift in Sources */,
 				5B893F931DB147260097E327 /* AddViewController.swift in Sources */,
+				5B5312BB1DB14C49002130B3 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
