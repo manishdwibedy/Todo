@@ -6,8 +6,10 @@
 //  Copyright © 2016 Manish Dwibedy. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import RealmSwift
+import Realm
 
-class Todo{
+class Todo:Object{
     dynamic var text = ""
 }
